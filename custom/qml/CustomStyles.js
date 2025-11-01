@@ -2,7 +2,7 @@
 .pragma library
 
 // COLORS - Update these with your palette later
-var primary = "#3B47FF"
+var primary = "#a4abFF"
 var secondary = "#FF6B35"
 var background = "#FAF9F6"
 var surface = "#FFFFFF"
