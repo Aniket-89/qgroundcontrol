@@ -14,6 +14,7 @@
         <file alias="vertical_speed.svg">res/Images/vertical_speed.svg</file>
         <file alias="dronecode-black.svg">res/Images/dronecode-black.svg</file>
         <file alias="dronecode-white.svg">res/Images/dronecode-white.svg</file>
+        <file alias="login_bg.jpg">res/Images/login_bg.jpg</file>
     </qresource>
     <qresource prefix="/Custom/qmlimages">
         <file alias="PaperPlane.svg">res/Images/CustomVehicleIcon.svg</file>
@@ -26,6 +27,7 @@
         <file alias="QGroundControl/MainWindow.qml">qml/MainWindow.qml</file>
         <file alias="CustomStyles.js">qml/CustomStyles.js</file>
         <file alias="screens/TestScreen.qml">qml/screens/TestScreen.qml</file>
+        <file alias="screens/LoginScreen.qml">qml/screens/LoginScreen.qml</file>
     </qresource>
     <qresource prefix="/Custom/res">
         <file alias="QGCLogoFull.svg">res/Images/QGCLogoFull.svg</file>

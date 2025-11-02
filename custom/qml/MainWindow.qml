@@ -265,7 +265,7 @@ ApplicationWindow {
     Loader {
         id:                     testScreen
         anchors.fill:           parent
-        source:                 "qrc:/Custom/qml/screens/TestScreen.qml"
+        source:                 "qrc:/Custom/qml/screens/LoginScreen.qml"
         visible:                mainWindow.homeVisible
     }
 
