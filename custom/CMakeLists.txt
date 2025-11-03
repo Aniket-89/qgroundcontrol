@@ -71,6 +71,7 @@ qgc_set_qt_resource_alias(
     ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CustomVehicleButton.qml
     ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CButton.qml
     ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CInput.qml
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/HomeSideBar.qml
 )
 
 qt_add_qml_module(CustomModule
@@ -88,6 +89,7 @@ qt_add_qml_module(CustomModule
         ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CustomVehicleButton.qml
         ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CButton.qml
         ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CInput.qml
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/HomeSideBar.qml
     NO_PLUGIN
 )
 
@@ -98,6 +100,11 @@ qt_add_qml_module(CustomModule
 set(CUSTOM_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/CustomPlugin.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/CustomPlugin.h
+
+    # ADD AUTHENTICATION FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/AuthenticationManager.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/AuthenticationManager.h
+
     ${CMAKE_CURRENT_SOURCE_DIR}/src/AutoPilotPlugin/CustomAutoPilotPlugin.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/AutoPilotPlugin/CustomAutoPilotPlugin.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/FirmwarePlugin/CustomFirmwarePlugin.cc

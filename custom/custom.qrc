@@ -15,6 +15,13 @@
         <file alias="dronecode-black.svg">res/Images/dronecode-black.svg</file>
         <file alias="dronecode-white.svg">res/Images/dronecode-white.svg</file>
         <file alias="login_bg.jpg">res/Images/login_bg.jpg</file>
+        <file alias="drone_image.png">res/Images/drone_image.png</file>
+        <file alias="home_bg.png">res/Images/home_bg.png</file>
+        <file alias="gear.png">res/Images/gear.png</file>
+        <file alias="wrench.png">res/Images/wrench.png</file>
+        <file alias="image.png">res/Images/image.png</file>
+        <file alias="map.png">res/Images/map.png</file>
+        <file alias="play.png">res/Images/play.png</file>
     </qresource>
     <qresource prefix="/Custom/qmlimages">
         <file alias="PaperPlane.svg">res/Images/CustomVehicleIcon.svg</file>
@@ -28,6 +35,7 @@
         <file alias="CustomStyles.js">qml/CustomStyles.js</file>
         <file alias="screens/TestScreen.qml">qml/screens/TestScreen.qml</file>
         <file alias="screens/LoginScreen.qml">qml/screens/LoginScreen.qml</file>
+        <file alias="screens/HomeScreen.qml">qml/screens/HomeScreen.qml</file>
     </qresource>
     <qresource prefix="/Custom/res">
         <file alias="QGCLogoFull.svg">res/Images/QGCLogoFull.svg</file>

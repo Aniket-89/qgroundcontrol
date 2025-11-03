@@ -15,6 +15,7 @@
 #include "QGCCorePlugin.h"
 #include "QGCOptions.h"
 
+class AuthenticationManager;
 class CustomOptions;
 class CustomPlugin;
 class CustomSettings;
@@ -56,6 +57,7 @@ public:
 private:
     QGCCorePlugin *_plugin = nullptr;
     CustomFlyViewOptions *_flyViewOptions = nullptr;
+
 };
 
 /*===========================================================================*/
@@ -91,6 +93,7 @@ private:
 
     CustomOptions *_options = nullptr;
     QQmlApplicationEngine *_qmlEngine = nullptr;
+    AuthenticationManager *_authManager = nullptr;
     class CustomOverrideInterceptor *_selector = nullptr;
     QVariantList _customSettingsList; // Not to be mixed up with QGCCorePlugin implementation
 };

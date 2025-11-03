@@ -14,6 +14,7 @@
 #include "QGCMAVLink.h"
 #include "AppSettings.h"
 #include "BrandImageSettings.h"
+#include "AuthenticationManager.h"
 
 #include <QtCore/QApplicationStatic>
 #include <QtQml/QQmlApplicationEngine>
@@ -42,6 +43,7 @@ CustomOptions::CustomOptions(CustomPlugin *plugin, QObject *parent)
 CustomPlugin::CustomPlugin(QObject *parent)
     : QGCCorePlugin(parent)
     , _options(new CustomOptions(this, this))
+    , _authManager(new AuthenticationManager(this))
 {
     qCDebug(CustomLog) << this;
 
@@ -278,6 +280,9 @@ QQmlApplicationEngine* CustomPlugin::createQmlApplicationEngine(QObject* parent)
     _qmlEngine = QGCCorePlugin::createQmlApplicationEngine(parent);
     _qmlEngine->addImportPath("qrc:/qml/Custom/Widgets");
     // TODO: Investigate _qmlEngine->setExtraSelectors({"custom"})
+
+    // REGISTER AUTH MANAGER WITH QML
+    _qmlEngine->rootContext()->setContextProperty("authManager", _authManager);
 
     _selector = new CustomOverrideInterceptor();
     _qmlEngine->addUrlInterceptor(_selector);

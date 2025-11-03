@@ -85,10 +85,12 @@ Rectangle {
                     width: parent.width
 
                     CInput {
+                        id:user
                         placeholderText: "username/email"
                     }
 
                     CInput {
+                        id:pass
                         placeholderText: "password"
                         isPassword: true
                     }
@@ -128,9 +130,8 @@ Rectangle {
                 // }
                 CButton {
                     text: "Login"; variant: "primary"
-                    onClicked: {
-                            console.log("Login clicked")
-                        }
+                    // loading: authManager.isLoading
+                    onClicked: authManager.login(user.text, pass.text)
                 }
             }
         }

@@ -27,6 +27,7 @@ ApplicationWindow {
     id:             mainWindow
     visible:        true
 
+    readonly property bool isAuthenticated: authManager.isAuthenticated
     property bool homeVisible:    true
 
     property bool   _utmspSendActTrigger
@@ -265,11 +266,11 @@ ApplicationWindow {
     Loader {
         id:                     testScreen
         anchors.fill:           parent
-        source:                 "qrc:/Custom/qml/screens/LoginScreen.qml"
-        visible:                mainWindow.homeVisible
+        source:                 mainWindow.isAuthenticated ? "qrc:/Custom/qml/screens/HomeScreen.qml" : "qrc:/Custom/qml/screens/LoginScreen.qml"
+        // visible:                is
     }
 
-    FlyView { 
+    FlyView {
         id:                     flyView
         anchors.fill:           parent
         visible:                false
