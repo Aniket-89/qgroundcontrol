@@ -20,6 +20,10 @@
 #include <QtQml/QQmlApplicationEngine>
 #include <QtQml/QQmlFile>
 
+#include <QQmlEngine>
+#include <QQmlContext>
+#include <QtQml/qqml.h>
+
 QGC_LOGGING_CATEGORY(CustomLog, "Custom.CustomPlugin")
 
 Q_APPLICATION_STATIC(CustomPlugin, _customPluginInstance);
@@ -278,6 +282,12 @@ void CustomPlugin::paletteOverride(const QString &colorName, QGCPalette::Palette
 QQmlApplicationEngine* CustomPlugin::createQmlApplicationEngine(QObject* parent)
 {
     _qmlEngine = QGCCorePlugin::createQmlApplicationEngine(parent);
+
+    // --- CUSTOM FLYVIEWTOOLBAR OVERRIDE ---
+    // Register our own FlyViewToolBar in place of the default QGC one
+    qmlRegisterType(QUrl("qrc:/Custom/qml/QGroundControl/QmlControls/FlyViewToolBar.qml"),
+                        "QGroundControl.Controls", 1, 0, "FlyViewToolBar");
+
     _qmlEngine->addImportPath("qrc:/qml/Custom/Widgets");
     // TODO: Investigate _qmlEngine->setExtraSelectors({"custom"})
 

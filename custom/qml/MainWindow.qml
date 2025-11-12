@@ -115,6 +115,11 @@ ApplicationWindow {
         return globals.validationErrorCount <= previousValidationErrorCount
     }
 
+    function showHomeView() {
+        flyView.visible = false
+        planView.visible = false
+    }
+
     function showPlanView() {
         flyView.visible = false
         planView.visible = true
@@ -390,7 +395,7 @@ ApplicationWindow {
                         onClicked: {
                             if (mainWindow.allowViewSwitch()) {
                                 drawer.close()
-                                mainWindow.showSettingsTool()
+                                mainWindow.showHomeView()
                             }
                         }
                     }

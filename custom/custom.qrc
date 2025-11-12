@@ -22,6 +22,8 @@
         <file alias="image.png">res/Images/image.png</file>
         <file alias="map.png">res/Images/map.png</file>
         <file alias="play.png">res/Images/play.png</file>
+        <file alias="logo.png">res/Images/logo.png</file>
+        <file alias="left_arrow.png">res/Images/left_arrow.png</file>
     </qresource>
     <qresource prefix="/Custom/qmlimages">
         <file alias="PaperPlane.svg">res/Images/CustomVehicleIcon.svg</file>
@@ -30,6 +32,8 @@
         <file alias="QGroundControl/FlightDisplay/CustomGuidedActionsController.qml">src/CustomGuidedActionsController.qml</file>
         <file alias="QGroundControl/FlightDisplay/FlyViewCustomLayer.qml">src/FlyViewCustomLayer.qml</file>
         <file alias="QGroundControl/FlightDisplay/FlyViewToolStripActionList.qml">src/FlyViewToolStripActionList.qml</file>
+        <file alias="QGroundControl/FlightDisplay/FlyView.qml">qml/flightDisplay/FlyView.qml</file>
+        <file alias="QGroundControl/QmlControls/FlyViewToolBar.qml">qml/flightDisplay/FlyViewToolBar.qml</file>
 
         <file alias="QGroundControl/MainWindow.qml">qml/MainWindow.qml</file>
         <file alias="CustomStyles.js">qml/CustomStyles.js</file>

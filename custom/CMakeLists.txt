@@ -72,6 +72,12 @@ qgc_set_qt_resource_alias(
     ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CButton.qml
     ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CInput.qml
     ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/HomeSideBar.qml
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CNavButton.qml
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/FlyNowPanel.qml
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/MissionsPanel.qml
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/MediaPanel.qml
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/SetupPanel.qml
+    ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CCard.qml
 )
 
 qt_add_qml_module(CustomModule
@@ -90,6 +96,12 @@ qt_add_qml_module(CustomModule
         ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CButton.qml
         ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CInput.qml
         ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/HomeSideBar.qml
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CNavButton.qml
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/FlyNowPanel.qml
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/MissionsPanel.qml
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/MediaPanel.qml
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/SetupPanel.qml
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/Custom/Widgets/CCard.qml
     NO_PLUGIN
 )
 

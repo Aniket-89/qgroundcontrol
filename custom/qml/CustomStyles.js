@@ -13,15 +13,16 @@ var accent = "#007AFF"
 
 // BUTTON COLORS
 var button = {
-    primaryBg: "#111111",
+    primaryBg: accent,
     primaryText: "#FFFFFF",
-    secondaryBg: "#4A473A",
+    secondaryBg: primary,
     secondaryText: "#FFFFFF",
     outlinedBorder: "#111111",
     outlinedText: "#111111",
     hoverOpacity: 0.9,
     pressedOpacity: 0.8
 }
+
 
 // SPACING
 var space = {
@@ -64,4 +65,10 @@ var radius = {
 var layout = {
     toolbarHeight: 60,
     sidebarWidth: 280
+}
+var sideBar = {
+    bg: surface,
+    itemSpacing: space.sm,
+    width: 0.2,
+    margins: space.md
 }

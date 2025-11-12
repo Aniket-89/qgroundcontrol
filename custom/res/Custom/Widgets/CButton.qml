@@ -9,7 +9,7 @@ Button {
     // property alias text: label.text
 
     implicitWidth: parent.width
-    implicitHeight: 32
+    implicitHeight: 40
     font.pixelSize: Style.fontSize.lg
     font.bold: true
 

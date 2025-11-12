@@ -1,126 +1,214 @@
-import QtQuick
-import QtQuick.Controls
-import QtQuick.Layouts
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
+import Qt5Compat.GraphicalEffects
 import "qrc:/Custom/qml/CustomStyles.js" as Styles
+import Custom.Widgets
 
 Rectangle {
     id: sidebar
-    width: 220
+    width: parent.width * 0.3
     Layout.fillHeight: true
-    color: Styles.border
-    radius: 0
-    border.color: Styles.border
+
+    // Glassmorphic background
+    color: Qt.rgba(0, 0, 0, 0.5)
     border.width: 1
+    border.color: Qt.rgba(0, 0, 0, 0.58)
+
+    property string activeButton: "flyNow"
+
+    // Top highlight for glass effect
+    Rectangle {
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.margins: 1
+        height: parent.height * 0.3
+        gradient: Gradient {
+            GradientStop { position: 0.0; color: Qt.rgba(0, 0, 0, 0.12) }
+            GradientStop { position: 1.0; color: "transparent" }
+        }
+    }
+
+    // Inner border for definition
+    Rectangle {
+        anchors.fill: parent
+        anchors.margins: 1
+        color: "transparent"
+        border.width: 1
+        border.color: Qt.rgba(1, 1, 1, 0.08)
+    }
+
+    // Drop shadow for depth
+    layer.enabled: true
+    layer.effect: DropShadow {
+        color: Qt.rgba(0, 0, 0, 0.3)
+        radius: 16
+        samples: 33
+        horizontalOffset: 4
+        verticalOffset: 0
+    }
 
     ColumnLayout {
         anchors.fill: parent
-        spacing: Styles.spacing.xl
-        // padding: 16
+        anchors.margins: Styles.space.md
+        spacing: Styles.space.md
 
-        // Logo
+        // Header with logo - Glass container
         Rectangle {
-            id: logoBox
-            width: parent.width
-            height: 48
-            radius: 8
-            color: Styles.primary
-            Layout.alignment: Qt.AlignLeft
+            Layout.fillWidth: true
+            Layout.preferredHeight: 42
+            // color: Qt.rgba(1, 1, 1, 0.05)
+            color: 'transparent'
+            // border.width: 1
+            // border.color: Qt.rgba(1, 1, 1, 0.15)
+            radius: Styles.radius.md
 
-            Text {
-                anchors.centerIn: parent
-                text: "DA\nGCS"
-                color: "orange"
-                font.bold: true
-                font.pixelSize: 16
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
+            // Top highlight
+            // Rectangle {
+            //     anchors.top: parent.top
+            //     anchors.left: parent.left
+            //     anchors.right: parent.right
+            //     anchors.margins: 1
+            //     height: parent.height * 0.5
+            //     radius: parent.radius
+            //     gradient: Gradient {
+            //         GradientStop { position: 0.0; color: Qt.rgba(1, 1, 1, 0.1) }
+            //         GradientStop { position: 1.0; color: "transparent" }
+            //     }
+            // }
+
+            Rectangle {
+                // anchors.centerIn: parent
+                width: 42
+                height: 42
+                color: Qt.rgba(1, 1, 1, 0.1)
+                border.width: 1
+                border.color: Qt.rgba(1, 1, 1, 0.2)
+                radius: Styles.radius.md
+                clip: true
+
+                // // Glass highlight on logo container
+                // Rectangle {
+                //     anchors.top: parent.top
+                //     anchors.left: parent.left
+                //     anchors.right: parent.right
+                //     anchors.margins: 1
+                //     height: parent.height * 0.4
+                //     radius: parent.radius
+                //     gradient: Gradient {
+                //         GradientStop { position: 0.0; color: Qt.rgba(1, 1, 1, 0.15) }
+                //         GradientStop { position: 1.0; color: "transparent" }
+                //     }
+                // }
+
+                Image {
+                    id: logoImage
+                    source: "qrc:/custom/img/logo.png"
+                    anchors.fill: parent
+                    anchors.margins: 4
+                    fillMode: Image.PreserveAspectFit
+                }
             }
         }
 
-        // Menu Items
+        // Navigation Items
         ColumnLayout {
-            spacing: 16
             Layout.fillWidth: true
+            Layout.fillHeight: true
+            spacing: Styles.space.sm
 
-            // Fly Now (Selected)
-            Rectangle {
-                width: parent.width
-                height: 40
-                radius: 6
-                color: "#C9C4A3"
-                RowLayout {
-                    anchors.fill: parent
-                    spacing: 8
-                    Image {
-                        source: "qrc:/custom/img/play.png"
-                        width: 8; height: 8
-                        fillMode: Image.PreserveAspectfit
-                    }
-                    Text {
-                        text: "Fly Now"
-                        font.bold: true
-                        color: Styles.textPrimary
-                        verticalAlignment: Text.AlignVCenter
-                        font.pixelSize: 16
-                    }
+            // Fly Now Button
+            CNavButton {
+                Layout.fillWidth: true
+                text: "Fly Now"
+                iconSource: "play.png"
+                iconColor: "#666666"
+                isActive: sidebar.activeButton === "flyNow"
+                isGlassmorphic: true
+                onClicked: {
+                    sidebar.activeButton = "flyNow"
+                    console.log("Fly Now clicked")
                 }
             }
 
             // Missions
-            RowLayout {
-                spacing: 8
+            CNavButton {
                 Layout.fillWidth: true
-                Image {
-                    source: "qrc:/custom/img/map.png"
-                    width: 20; height: 20
-                }
-                Text {
-                    text: "Missions"
-                    color: Styles.textPrimary
-                    font.pixelSize: 16
+                text: "Missions"
+                iconSource: "play.png"
+                iconColor: "#4CAF50"
+                isActive: sidebar.activeButton === "missions"
+                isGlassmorphic: true
+                onClicked: {
+                    sidebar.activeButton = "missions"
+                    console.log("Missions clicked")
                 }
             }
 
             // Media
-            RowLayout {
-                spacing: 8
+            CNavButton {
                 Layout.fillWidth: true
-                Image {
-                    source: "qrc:/custom/img/image.png"
-                    width: 20; height: 20
-                }
-                Text {
-                    text: "Media"
-                    color: Styles.textPrimary
-                    font.pixelSize: 16
+                text: "Media"
+                iconSource: "play.png"
+                iconColor: "#FFA726"
+                isActive: sidebar.activeButton === "media"
+                isGlassmorphic: true
+                onClicked: {
+                    sidebar.activeButton = "media"
+                    console.log("Media clicked")
                 }
             }
 
             // Setup
-            RowLayout {
-                spacing: 8
+            CNavButton {
                 Layout.fillWidth: true
-                Image {
-                    source: "qrc:/custom/img/wrench.png"
-                    width: 20; height: 20
-                }
-                Text {
-                    text: "Setup"
-                    color: Styles.textPrimary
-                    font.pixelSize: 16
+                text: "Setup"
+                iconText: "🔧"
+                iconColor: "#78909C"
+                isActive: sidebar.activeButton === "setup"
+                isGlassmorphic: true
+                onClicked: {
+                    sidebar.activeButton = "setup"
+                    console.log("Setup clicked")
                 }
             }
-        }
 
-        // Bottom Gear Icon
-        Item {
-            Layout.fillHeight: true
+            // Spacer
+            Item {
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+            }
+
+            // Divider line with glass effect
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 1
+                Layout.margins: Styles.margin.md
+                gradient: Gradient {
+                    orientation: Gradient.Horizontal
+                    GradientStop { position: 0.0; color: "transparent" }
+                    GradientStop { position: 0.5; color: Qt.rgba(1, 1, 1, 0.2) }
+                    GradientStop { position: 1.0; color: "transparent" }
+                }
+            }
+
+            // Settings Button
+            CNavButton {
+                Layout.fillWidth: true
+                text: ""
+                iconText: "⚙"
+                iconColor: "#666666"
+                isGlassmorphic: false
+                color: "transparent"
+                onClicked: console.log("Settings clicked")
+            }
         }
-        Image {
-            source: "qrc:/custom/img/gear.png"
-            width: 12
-            height: 12
-            opacity: 0.8
-        }
+    }
+
+    signal navigationChanged(string page)
+
+    onActiveButtonChanged: {
+        navigationChanged(activeButton)
     }
 }
