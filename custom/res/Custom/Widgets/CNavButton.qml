@@ -21,7 +21,7 @@ Rectangle {
     // Styling
     implicitWidth: parent ? parent.width : 280
     implicitHeight: 36
-    radius: Styles.radius.md
+    radius: Styles.radius.sm
 
     // Color based on state and style
     color: {
@@ -106,7 +106,7 @@ Rectangle {
     // Content
     RowLayout {
         anchors.fill: parent
-        anchors.leftMargin: Styles.margin.lg
+        anchors.leftMargin: Styles.margin.md
         anchors.rightMargin: Styles.margin.md
         spacing: Styles.space.md
 
@@ -119,12 +119,17 @@ Rectangle {
         //     Layout.alignment: Qt.AlignVCenter
         //     visible: root.iconText !== ""
         // }
-
-        Image {
-            id: _icon
-            source: "qrc:/custom/img/" + root.iconSource
-            height: 24
+        Rectangle {
             width: 24
+            height: 24
+            clip: true
+            color: "transparent"
+            Image {
+                id: _icon
+                source: "qrc:/custom/img/" + root.iconSource
+                anchors.fill: parent
+                fillMode: Image.PreserveAspectCrop
+            }
         }
 
         // Text Label

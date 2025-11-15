@@ -72,3 +72,9 @@ var sideBar = {
     width: 0.2,
     margins: space.md
 }
+
+var toolBar = {
+    height: 36,
+    bgColor: Qt.rgba(0, 0, 0, 0.7),
+
+}

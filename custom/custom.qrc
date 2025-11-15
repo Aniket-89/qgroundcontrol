@@ -34,7 +34,7 @@
         <file alias="QGroundControl/FlightDisplay/FlyViewToolStripActionList.qml">src/FlyViewToolStripActionList.qml</file>
         <file alias="QGroundControl/FlightDisplay/FlyView.qml">qml/flightDisplay/FlyView.qml</file>
         <file alias="QGroundControl/QmlControls/FlyViewToolBar.qml">qml/flightDisplay/FlyViewToolBar.qml</file>
-
+        <file alias="QGroundControl/QmlControls/MainStatusIndicator.qml">qml/flightDisplay/MainStatusIndicator.qml</file>
         <file alias="QGroundControl/MainWindow.qml">qml/MainWindow.qml</file>
         <file alias="CustomStyles.js">qml/CustomStyles.js</file>
         <file alias="screens/TestScreen.qml">qml/screens/TestScreen.qml</file>

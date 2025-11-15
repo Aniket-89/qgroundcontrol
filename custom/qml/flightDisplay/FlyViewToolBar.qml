@@ -14,12 +14,13 @@ import QtQuick.Dialogs
 
 import QGroundControl
 import QGroundControl.Controls
+import "qrc:/Custom/qml/CustomStyles.js" as Style
 
 Rectangle {
     id:     control
     width:  parent.width
-    height: ScreenTools.toolbarHeight
-    color:  "transparent"
+    height: 32
+    color:  Style.toolBar.bgColor
 
     property var    _activeVehicle:     QGroundControl.multiVehicleManager.activeVehicle
     property bool   _communicationLost: _activeVehicle ? _activeVehicle.vehicleLinkManager.communicationLost : false
@@ -41,29 +42,26 @@ Rectangle {
         color:          qgcPal.toolbarDivider
     }
 
-    Rectangle {
-        id:             gradientBackground
-        anchors.top:    parent.top
-        anchors.bottom: parent.bottom
-        anchors.left:   parent.left
-        width:          mainStatusLayout.width
-        opacity:        qgcPal.windowTransparent.a
-        
-        gradient: Gradient {
-            orientation: Gradient.Horizontal
-            GradientStop { position: 0; color: _mainStatusBGColor }
-            //GradientStop { position: qgcButton.x + qgcButton.width; color: _mainStatusBGColor }
-            GradientStop { position: 1; color: qgcPal.window }
-        }
-    }
+    // Rectangle {
+    //     id:             gradientBackground
+    //     anchors.top:    parent.top
+    //     anchors.bottom: parent.bottom
+    //     anchors.left:   parent.left
+    //     width:          mainStatusLayout.width
+    //     opacity:        qgcPal.windowTransparent.a
+    //     color: _mainStatusBGColor
+    //     // gradient: Gradient {
+    //     //     orientation: Gradient.Horizontal
+    //     //     GradientStop { position: 0; color: _mainStatusBGColor }
+    //     //     //GradientStop { position: qgcButton.x + qgcButton.width; color: _mainStatusBGColor }
+    //     //     GradientStop { position: 1; color: qgcPal.window }
+    //     // }
+    // }
 
-    Rectangle {
-        anchors.top:    parent.top
-        anchors.bottom: parent.bottom
-        anchors.left:   gradientBackground.right
-        anchors.right:  parent.right
-        color:          qgcPal.windowTransparent
-    }
+    // Rectangle {
+    //     anchors.fill: parent
+    //     color:          "red"
+    // }
 
     RowLayout {
         id:                     mainLayout
@@ -98,6 +96,7 @@ Rectangle {
                     id:                 mainStatusIndicator
                     Layout.fillHeight:  true
                 }
+
             }
 
             QGCButton {

@@ -288,6 +288,9 @@ QQmlApplicationEngine* CustomPlugin::createQmlApplicationEngine(QObject* parent)
     qmlRegisterType(QUrl("qrc:/Custom/qml/QGroundControl/QmlControls/FlyViewToolBar.qml"),
                         "QGroundControl.Controls", 1, 0, "FlyViewToolBar");
 
+    qmlRegisterType(QUrl("qrc:/Custom/qml/QGroundControl/QmlControls/MainStatusIndicator.qml"),
+                    "QGroundControl.Controls", 1, 0, "MainStatusIndicator");
+
     _qmlEngine->addImportPath("qrc:/qml/Custom/Widgets");
     // TODO: Investigate _qmlEngine->setExtraSelectors({"custom"})
 

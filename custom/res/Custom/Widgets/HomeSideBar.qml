@@ -136,7 +136,7 @@ Rectangle {
             CNavButton {
                 Layout.fillWidth: true
                 text: "Missions"
-                iconSource: "play.png"
+                iconSource: "map.png"
                 iconColor: "#4CAF50"
                 isActive: sidebar.activeButton === "missions"
                 isGlassmorphic: true
@@ -150,7 +150,7 @@ Rectangle {
             CNavButton {
                 Layout.fillWidth: true
                 text: "Media"
-                iconSource: "play.png"
+                iconSource: "image.png"
                 iconColor: "#FFA726"
                 isActive: sidebar.activeButton === "media"
                 isGlassmorphic: true
@@ -164,7 +164,7 @@ Rectangle {
             CNavButton {
                 Layout.fillWidth: true
                 text: "Setup"
-                iconText: "🔧"
+                iconSource: "wrench.png"
                 iconColor: "#78909C"
                 isActive: sidebar.activeButton === "setup"
                 isGlassmorphic: true
@@ -196,12 +196,15 @@ Rectangle {
             // Settings Button
             CNavButton {
                 Layout.fillWidth: true
-                text: ""
-                iconText: "⚙"
-                iconColor: "#666666"
-                isGlassmorphic: false
-                color: "transparent"
-                onClicked: console.log("Settings clicked")
+                text: "Settings"
+                iconSource: "gear.png"
+                iconColor: "#78909C"
+                // isActive: sidebar.activeButton === "setup"
+                isGlassmorphic: true
+                onClicked: {
+                    // sidebar.activeButton = "setup"
+                    console.log("Settings clicked")
+                }
             }
         }
     }

@@ -14,6 +14,7 @@ Rectangle {
         id: bg
         source: "qrc:/custom/img/home_bg.png"
         anchors.fill: parent
+        fillMode: Image.PreserveAspectCrop
     }
     signal flyNowClicked()
 
