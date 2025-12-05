@@ -395,7 +395,7 @@ ApplicationWindow {
                         onClicked: {
                             if (mainWindow.allowViewSwitch()) {
                                 drawer.close()
-                                mainWindow.showHomeView()
+                                mainWindow.showSettingsTool()
                             }
                         }
                     }

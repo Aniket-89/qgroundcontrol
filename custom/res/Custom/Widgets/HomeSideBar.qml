@@ -204,6 +204,7 @@ Rectangle {
                 onClicked: {
                     // sidebar.activeButton = "setup"
                     console.log("Settings clicked")
+                    mainWindow.showSettingsTool()
                 }
             }
         }
